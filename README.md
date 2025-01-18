@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a **Streamlit-based web application** designed to visualize and predict population growth in Tamil Nadu sub-districts using a **continuous-time logistic model**. The app provides a user-friendly interface for analyzing population growth and future infrastructure requirements based on dynamic inputs.
+A **Streamlit-based web application** designed to visualize and predict population growth in Tamil Nadu sub-districts using a **continuous-time logistic model**. The app provides a user-friendly interface for analyzing population growth and future infrastructure requirements based on dynamic inputs.
 
 The app integrates map visualization using **Folium**, enabling users to interact with geospatial data and mark specific locations for further analysis.
 
