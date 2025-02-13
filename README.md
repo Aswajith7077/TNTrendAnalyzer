@@ -1,4 +1,4 @@
-# Population Prediction Application
+# Tamil Nadu Trend Analyzer
 
 ## Overview
 
