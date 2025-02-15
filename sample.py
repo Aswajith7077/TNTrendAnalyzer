@@ -5,7 +5,7 @@ import folium
 from streamlit_folium import st_folium
 from shapely.geometry import Polygon
 from shapely import wkt
-from algo import project_continuous_time_logistic_model
+from src.algo import project_continuous_time_logistic_model
 import math
 
 

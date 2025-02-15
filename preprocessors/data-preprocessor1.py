@@ -16,7 +16,7 @@ print(growth_rates_list)
 
 
 
-path = './A-1_NO_OF_VILLAGES_TOWNS_HOUSEHOLDS_POPULATION_AND_AREA_1.xlsx'
+path = './../data/A-1_NO_OF_VILLAGES_TOWNS_HOUSEHOLDS_POPULATION_AND_AREA_1.xlsx'
 
 
 pop_data = pandas.read_excel(path)

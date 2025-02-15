@@ -3,10 +3,11 @@ import plotly.express as px
 import pandas
 import numpy
 
-fileName = 'C:\\Users\\ASWAJITH\\OneDrive\\ドキュメント\\SCL_Package\\geojson-to-csv.csv'
-data = pandas.read_csv(fileName).sort_values(by = 'dtcode11').iloc[1:-1,:]
+fileName = 'data/geojson-to-csv.csv'
+path = 'data/A-1_NO_OF_VILLAGES_TOWNS_HOUSEHOLDS_POPULATION_AND_AREA_1.xlsx'
 
-path = './A-1_NO_OF_VILLAGES_TOWNS_HOUSEHOLDS_POPULATION_AND_AREA_1.xlsx'
+
+data = pandas.read_csv(fileName).sort_values(by = 'dtcode11').iloc[1:-1,:]
 pop_data = pandas.read_excel(path)
 
 # sub_district_pop = pop_data[pop_data[1] == 33][pop_data[6] == 'Total'][pop_data[4] == 'DISTRICT']
@@ -15,6 +16,8 @@ pop_data = pandas.read_excel(path)
 
 district_pop = pop_data[pop_data[1] == 33][pop_data[6] == 'Total'][pop_data[4] == 'DISTRICT']
 district_pop = district_pop.drop(columns = [1,4,6,7,8,9,10,12,13,'13.1',14])[1:].sort_values(by = 3).iloc[:-1,:]
+
+
 
 district_pop_map = {}
 district_code_map = {}
@@ -71,7 +74,7 @@ def getDistrictPopulation(district):
     return -1
 
 
-def results():
+def Visualizations():
     # with st.expander("Show Data Frame"):
     st.header("Results")
     st.write('Data Frame of the districts and sub-districts')
@@ -89,9 +92,8 @@ def results():
 
     col1,col2 = st.columns(2)
     with col1:
-        d = st.selectbox("District wise Population distribution",tuple(district_pop_map.keys()))
+        d = st.selectbox("District wise Population distribution",tuple(district_pop_map.keys())[1:])
         dat = getSubPopulation(d)
-        print(dat)
         chart = px.pie(dat,values = 'population',names = 'region')
         st.plotly_chart(chart)
     

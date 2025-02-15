@@ -3,10 +3,10 @@ import pandas
 
 
 
-fileName = 'C:\\Users\\ASWAJITH\\OneDrive\ドキュメント\\SCL_Package\\geojson-to-csv.csv'
+fileName = './../data/geojson-to-csv.csv'
 data = pandas.read_csv(fileName).sort_values(by = 'dtcode11').iloc[1:-1,:]
 
-path = './A-1_NO_OF_VILLAGES_TOWNS_HOUSEHOLDS_POPULATION_AND_AREA_1.xlsx'
+path = './../data/A-1_NO_OF_VILLAGES_TOWNS_HOUSEHOLDS_POPULATION_AND_AREA_1.xlsx'
 
 
 pop_data = pandas.read_excel(path)
