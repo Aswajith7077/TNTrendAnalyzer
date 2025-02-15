@@ -9,7 +9,7 @@ from algo import project_continuous_time_logistic_model
 import math
 
 
-fileName = 'C:\\Users\\ASWAJITH\\OneDrive\ドキュメント\\SCL_Package\\geojson-to-csv.csv'
+fileName = 'C:\\Users\\ASWAJITH\\OneDrive\\ドキュメント\\SCL_Package\\geojson-to-csv.csv'
 data = pandas.read_csv(fileName).sort_values(by = 'dtcode11').iloc[1:-1,:]
 
 path = './A-1_NO_OF_VILLAGES_TOWNS_HOUSEHOLDS_POPULATION_AND_AREA_1.xlsx'
@@ -58,7 +58,7 @@ def vote(final_pop,dist):
     for i in range(len(dist)):
         c1,s,c2 = st.columns([3,4,7])
         c1.write(f'\t{i + 1}.\t{dist}')
-        c2.write(f'{math.ceil(final_pop)}')
+        c2.write(f'{final_pop}')
 
     if st.button("OK",use_container_width = True):
 
@@ -207,6 +207,5 @@ def app():
     with col2:
 
         st_folium(st.session_state.map_object,use_container_width = True)        
-        with st.expander("Show Data Frame"):
-            st.dataframe(data = data,use_container_width = True)
+        
         
